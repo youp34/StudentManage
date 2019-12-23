@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>注 册</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="{{assets1}}i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="{{assets1}}i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets1/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets1/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="assets1/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets1/css/app.css">
+</head>
+<body>
+<header>
+  <div class="log-header">
+      <h1><a href="/">XXXXXXX</a> </h1>
+  </div>    
+  <div class="log-re">
+     <a href="/"><button type="button" class="am-btn am-btn-default am-radius log-button">登 录</button></a>
+  </div> 
+</header>
+
+<div class="log"> 
+  <div class="am-g">
+  <div class="am-u-lg-3 am-u-md-6 am-u-sm-8 am-u-sm-centered log-content">
+    <h1 class="log-title am-animation-slide-top">注 册</h1>
+    <br>
+    <form class="am-form" id="log-form" action="/registered" method="post">
+      <div class="am-input-group am-radius am-animation-slide-left">       
+        <input type="text" id="doc-vld-email-2-1" class="am-radius" data-validation-message="请输入正确的学号" placeholder="请输入你的学号" name="student_id"/>
+        <span class="am-input-group-label log-icon am-radius"><i class="am-icon-user am-icon-sm am-icon-fw"></i></span>
+      </div>
+      <br>
+      <div class="am-input-group am-animation-slide-left log-animation-delay">
+        <input type="text" id="" class="am-form-field am-radius log-input" placeholder="请输入你的真实姓名!"  name="name">
+        <span class="am-input-group-label log-icon am-radius"><i class="am-icon-lock am-icon-sm am-icon-fw"></i></span>
+      </div>
+      <br>
+      <div class="am-input-group am-animation-slide-left log-animation-delay">       
+        <input type="password" id="log-password" class="am-form-field am-radius log-input" placeholder="密码" minlength="11" >
+        <span class="am-input-group-label log-icon am-radius"><i class="am-icon-lock am-icon-sm am-icon-fw"></i></span>
+      </div>
+      <br>   
+      <div class="am-input-group am-animation-slide-left log-animation-delay-a">       
+        <input type="password" data-equal-to="#log-password" class="am-form-field am-radius log-input" placeholder="确认密码" data-validation-message="请确认密码一致" name="password">
+        <span class="am-input-group-label log-icon am-radius"><i class="am-icon-lock am-icon-sm am-icon-fw"></i></span>
+      </div>
+      <br>
+      <button type="submit" class="am-btn am-btn-primary am-btn-block am-btn-lg am-radius am-animation-slide-bottom log-animation-delay-b">注 册</button>
+      <br>
+      <div class="am-btn-group am-animation-slide-bottom log-animation-delay-b">
+      <p th:text="${successful}" style="color: red"> </p>
+      <!--<a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> Github</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> Google+</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> stackOverflow</a>-->
+      </div>
+    </form>
+  </div>
+  </div>
+  <footer class="log-footer">
+    © 2019 design by 赵朋玉
+  </footer>
+</div>
+
+
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets1/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets1/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets1/js/amazeui.min.js"></script>
+<script src="assets1/js/app.js"></script>
+</body>
+</html>

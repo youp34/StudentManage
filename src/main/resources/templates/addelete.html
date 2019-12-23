@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>修改密码页</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/jquery.min.js"></script>
+
+</head>
+
+<body data-type="widgets">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+                </div>
+                <!-- 搜索 -->
+                <div class="am-fl tpl-header-search">
+                    <form class="tpl-header-search-form" action="javascript:;">
+                        <button class="tpl-header-search-btn am-icon-search"></button>
+                        <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+                    </form>
+                </div>
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                        <!-- 欢迎语 -->
+                        <li class="am-text-sm tpl-header-navbar-welcome">
+                            <a href="javascript:;">欢迎你, <span th:text="${name}"></span>(管理员)</a>
+                        </li>
+
+                        <!-- 新邮件 -->
+                        <li class="am-dropdown tpl-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle tpl-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-envelope"></i>
+                                <span class="am-badge am-badge-success am-round item-feed-badge">4</span>
+                            </a>
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <div class="menu-messages-ico">
+                                            <img src="assets/img/user04.png" alt="">
+                                        </div>
+                                        <div class="menu-messages-time">
+                                            3小时前
+                                        </div>
+                                        <div class="menu-messages-content">
+                                            <div class="menu-messages-content-title">
+                                                <i class="am-icon-circle-o am-text-success"></i>
+                                                <span>夕风色</span>
+                                            </div>
+                                            <div class="am-text-truncate"> Amaze UI 的诞生，依托于 GitHub 及其他技术社区上一些优秀的资源；Amaze UI 的成长，则离不开用户的支持。 </div>
+                                            <div class="menu-messages-content-time">2016-09-21 下午 16:40</div>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <div class="menu-messages-ico">
+                                            <img src="assets/img/user02.png" alt="">
+                                        </div>
+                                        <div class="menu-messages-time">
+                                            5天前
+                                        </div>
+                                        <div class="menu-messages-content">
+                                            <div class="menu-messages-content-title">
+                                                <i class="am-icon-circle-o am-text-warning"></i>
+                                                <span>禁言小张</span>
+                                            </div>
+                                            <div class="am-text-truncate"> 为了能最准确的传达所描述的问题， 建议你在反馈时附上演示，方便我们理解。 </div>
+                                            <div class="menu-messages-content-time">2016-09-16 上午 09:23</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="tpl-dropdown-menu-messages">
+                                    <a href="javascript:;" class="tpl-dropdown-menu-messages-item am-cf">
+                                        <i class="am-icon-circle-o"></i> 进入列表…
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 新提示 -->
+                        <li class="am-dropdown" data-am-dropdown>
+                            <a href="javascript:;" class="am-dropdown-toggle" data-am-dropdown-toggle>
+                                <i class="am-icon-bell"></i>
+                                <span class="am-badge am-badge-warning am-round item-feed-badge"></span>
+                            </a>
+
+                            <!-- 弹出列表 -->
+                            <ul class="am-dropdown-content tpl-dropdown-content">
+                                <div class="am-fl tpl-header-search">
+                                    <form class="tpl-header-search-form" action="javascript:;">
+                                        <button class="tpl-header-search-btn am-icon-search"></button>
+                                        <input class="tpl-header-search-box" type="text" placeholder="请假原因...">
+                                    </form>
+                                </div>
+
+
+                                <li class="tpl-dropdown-menu-notifications" onclick="validate1()">
+                                    <a href="" class="tpl-dropdown-menu-notifications-item am-cf">
+                                        <i class="am-icon-bell"></i> 请假
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 退出 -->
+                        <li class="am-text-sm">
+                            <a href="/logout">
+                                <span class="am-icon-sign-out"></span> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-toggle am-icon-cog">
+            </div>
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-title">
+                    选择主题
+                </div>
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture">
+                        <img src="assets/img/user04.png" alt="">
+                    </div>
+                    <span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              <i th:text="${email}"></i>
+          </span>
+                </div>
+            </div>
+
+
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+               
+                <li class="sidebar-nav-link">
+                    <a href="/adindex">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i>首页
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/adtables" class="active">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>实验室成员信息
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/adcalendar">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i>成员出勤总览
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/form">
+                        <i class="am-icon-wpforms sidebar-nav-link-logo"></i>管理
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/adchart">
+                        <i class="am-icon-bar-chart sidebar-nav-link-logo"></i>出勤统计表
+
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="javascript:;" class="sidebar-nav-sub-title ">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>设置
+                        <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+                    </a>
+                    <ul class="sidebar-nav sidebar-nav-sub">
+                        <li class="sidebar-nav-link">
+                            <a href="/adtable-list">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 注册管理员
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-link">
+                            <a href="/adtable-list-img">
+                                <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/advideo">
+                        <i class="am-icon-tv sidebar-nav-link-logo"></i>实验室监控系统
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/video_management">
+                        <i class="am-icon-tv sidebar-nav-link-logo"></i>实验室录像管理
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="/picture_management">
+                        <i class="am-icon-tv sidebar-nav-link-logo"></i>实验室图片管理
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">删除实验室成员</div>
+                                <div class="widget-function am-fr">
+                                    <a href="javascript:;" class="am-icon-cog"></a>
+                                </div>
+                            </div>
+                            <div class="widget-body am-fr">
+
+                                <form class="am-form tpl-form-border-form" action="/delete" method="post">
+                                    <div class="am-form-group">
+                                        <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">学号 <span class="tpl-form-line-small-title">Student_id</span></label>
+                                        <div class="am-u-sm-12">
+                                            <input type="password" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="请输入该学生的学号" name="student_id">
+                                            <br>
+                                        </div>
+                                    </div>
+									<div class="am-form-group">
+                                        <div class="am-u-sm-9 am-u-sm-push-3">
+                                            <button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">删 除</button>
+                                            <a href="/adtables"><button  class="am-btn am-btn-primary tpl-btn-bg-color-success ">取 消</button></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        function validate1() {
+            $.ajax({
+                type: "POST",
+                url: "/sick",
+                dataType: 'json',
+                //data: {name:"张三",sex:1},//也可以是字符串链接"name=张三&sex=1"，建议用对象
+                success: function (data) {
+                    //实际操作的时候，返回的json对象中可能会有成功错误的判断标记，所以可能也需要判断一下
+                    console.log(data);
+                    alert(data)
+                }
+            });
+            alert("请假成功!")
+        }
+    </script>
+</body>
+
+</html>
